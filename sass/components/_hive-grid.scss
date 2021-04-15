@@ -1,0 +1,81 @@
+.hive {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    @include respond(phone) {
+        display: block;
+        margin: 0 auto;
+    }
+
+    &-row {
+        position: relative;
+        width: auto;
+        height: auto;
+        max-width: $grid-width;
+        text-align: center;
+        margin: 0 auto;
+        &__info {
+            margin-bottom:calc(#{$hive-size}/1.5);
+            text-align: left;
+            @include respond(phone) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &-design {
+        width: $hive-size;
+        height: $hive-size;
+        background-color: rgba($color-black, 0.5); //will act as a shadow
+        margin-top: calc((-1)*#{$hive-size}/4);
+
+        @supports(not (clip-path: polygon(0 0) or (-webkit-clip-path: polygon(0 0)))) {
+            margin-top:.5rem;
+        }
+
+        @include respond(phone) {
+            margin: 0 auto;
+        }
+        @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+            clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+        }
+        &__contents {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-51%, -51%); //to position the shadow
+            width: 98%; //to give a little shadow
+            height: 98%; //to give a little shadow
+            overflow: hidden;
+            background-color: $color-grey-light-3;
+            background-image: linear-gradient(to bottom right, $color-grey-light-2, $color-grey-light-3, $color-grey-dark-2, $color-grey-dark-3);
+            @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+                -webkit-clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+                clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+            }
+            & a {
+                display: block;
+                width: calc(#{$hive-size}*0.98);
+                transform: scale(.9, .9); //gives a border
+                height: calc(#{$hive-size}*0.98);
+                @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+                    -webkit-clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+                    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+                }
+                & img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: auto;
+                    transform: scale(1, 1) translate(-50%, -50%);
+                    height: $hive-size;
+                    transition: transform .35s;
+                    &:hover {
+                        transform: scale(0.6, 0.6) translate(calc(-50%/0.6), calc(-50%/0.6));
+                    }
+                }
+            }
+        }
+    }
+}

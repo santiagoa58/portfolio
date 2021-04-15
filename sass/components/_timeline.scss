@@ -1,0 +1,243 @@
+.circle-design {
+    position: relative;
+    background-image: linear-gradient(to right,
+    rgba($circle-design-lightcolor, 1) 0%,
+    rgba($circle-design-darkcolor, 1) 50%,
+    rgba($circle-design-lightcolor, 1) 50%,
+    rgba($circle-design-darkcolor, 1) 100%);
+    margin: 0;
+    border-radius: 50%;
+    @include respond(phone) {
+        border-radius: $border-radius;
+    }
+    background-color: $circle-design-darkcolor;
+    box-shadow: $box-shadow;
+}
+
+.section-timeline {
+    &__container {
+        display: block;
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
+
+        &:nth-of-type(2) {
+            width: 75%;
+            max-width: 100rem;
+            margin-bottom: 5rem;
+            padding-top: calc(#{$radio-group-top}*2);
+
+            @include respond(tab-port) {
+                width: 100%;
+                padding:calc(#{$radio-group-top}*2) $padding-xsmall 0 $padding-xsmall;
+            }
+            @include respond(phone) {
+                margin-bottom: 8rem;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: calc(100% - #{$radio-group-width});
+                height: calc(#{$radio-size}/3);
+
+                top: calc(100% -1.75*#{$radio-group-top});
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                background-color: $color-primary-light;
+                border-radius: 10%;
+
+                z-index: 1;
+            }
+        }
+    }
+
+    &__row {
+        position: relative;
+        width: $circle-timeline-size;
+        height: $circle-timeline-size;
+        @include respond(phone) {
+            width: 85%;
+            height: $circle-timeline-size-small;
+            overflow-x: hidden;
+        }
+    }
+    &__contents {
+        position: absolute;
+        top: $circle-design-border;
+        left: $circle-design-border;
+        border-radius: 50%;
+
+        width: $circle-timeline-contents-size;
+        height: $circle-timeline-contents-size;
+        padding: $circle-design-border;
+
+        @include respond(phone) {
+            border-radius: $border-radius;
+            width: 100%;
+            height: auto;
+            padding: $circle-design-border-small;
+            top: 0;
+            left: 0;
+        }
+
+        overflow: hidden;
+        @include respond(phone) {
+            overflow: visible;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0%;
+            width: 50%;
+            height: $circle-timeline-contents-size;
+            @include respond(phone) {
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+        &::before {
+            left: 0%;
+            background-color: $circle-design-lightcolor;
+            mix-blend-mode: color;
+        }
+        &::after {
+            left: 50%;
+            background-color: $circle-design-darkcolor;
+            mix-blend-mode: color;
+        }
+        &-year,
+        &-p {
+            color: $color-grey-light-2;
+            margin: 0 auto;
+            @include respond(phone) {
+                margin: $circle-design-border-small auto;
+            }
+            opacity: 0;
+            transition: opacity ease-in 0.4s;
+            @supports(not (mix-blend-mode: color)) {
+                position: relative;
+                z-index: 4;
+            }
+
+        }
+
+        &-year {
+            margin-bottom: $circle-design-border;
+        }
+
+        &-p {
+            width: $circle-timeline-contents-p-size;
+            height: $circle-timeline-contents-p-size;
+            border-radius: 50%;
+            @include respond(phone) {
+                border-radius: 0;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    #first-shown {
+        //TO BE TRANSITIONED USING JAVASCRIPT
+        h2,
+        h3,
+        h1,
+        p {
+            opacity: 1;
+        }
+    }
+    &__radio-group {
+        position: relative;
+        display: inline-block;
+        z-index: 5;
+        width: $radio-group-width;
+
+        &:nth-of-type(odd) {
+            .section-timeline__radio-label {
+                top: $radio-group-top;
+            }
+            .section-timeline__radio-button {
+                top: calc(-1.75*#{$radio-group-top});
+            }
+        }
+        &:nth-of-type(even) {
+            .section-timeline__radio-button {
+                top: calc(1.5*#{$radio-group-top});
+            }
+            .section-timeline__radio-label {
+                top: calc(-2.25*#{$radio-group-top});
+            }
+        }
+        &:first-of-type {
+            float: left;
+        }
+        &:last-of-type {
+            float: right;
+            .section-timeline__radio-button {
+                @include respond(phone) {
+                    left: 70%;
+                    transform: translateX(-50%);
+                }
+            }
+            .section-timeline__radio-label {
+                @include respond(phone) {
+
+                    transform: translateX(-20%);
+                }
+            }
+        }
+    }
+
+    &__radio-input {
+        display: none;
+    }
+    &__radio-label {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+        width: 100%;
+        top: calc(-1.75*#{$radio-group-top});
+        @include respond(phone) {
+            //            transform: rotate(-25deg);
+        }
+    }
+    &__radio-button {
+        position: absolute;
+        display: block;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid $color-primary-light;
+        border-radius: 50%;
+        height: $radio-size;
+        width: $radio-size;
+        z-index: 2;
+        background-color: $color-primary-dark;
+
+        box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            display: block;
+            height: $radio-size-inner;
+            width: $radio-size-inner;
+            border-radius: 50%;
+            background-color: $color-grey-light-2;
+            background-image: linear-gradient(to right top, $color-grey-light-2, $color-tertiary-light, $color-tertiary, $color-grey-light-3);
+            @include center-middle;
+
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+    /*when the default radio button is checked, then select the custom radio button*/
+    &__radio-input:checked + &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+
+}

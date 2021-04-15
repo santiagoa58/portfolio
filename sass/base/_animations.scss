@@ -1,0 +1,554 @@
+/*Keframes for animations*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveInLeft {
+    /*initial*/
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80% {
+        transform: translateX(1.2rem);
+    }
+    /*final*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    /*initial*/
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80% {
+        transform: translateX(-1.2rem);
+    }
+    /*final*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    /*initial*/
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    /*final*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+@keyframes actioncallDrop {
+    /*initial*/
+    0% {
+        width: 8rem;
+        margin: 0 auto 0 auto;
+        transform: translateY(-200%);
+    }
+    /*final*/
+    100% {
+        width: $action-call-width;
+        margin: 35% auto 0 auto;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textboxExpand {
+    /*initial*/
+    0% {
+        width: 8rem;
+    }
+    /*final*/
+    100% {
+        width: 65%;
+    }
+}
+
+@keyframes appear {
+
+    /*initial*/
+    0% {
+        opacity: 0;
+        width: 0%;
+        height: 0;
+        white-space: nowrap;
+    }
+    20% {
+        opacity: 0.1;
+        width: 20%;
+        height: 3%;
+        white-space: nowrap;
+    }
+    40% {
+        opacity: 0.2;
+        width: 40%;
+        height: 6%;
+        white-space: nowrap;
+    }
+    60% {
+        opacity: .4;
+        width: 60%;
+        height: 9%;
+        white-space: nowrap;
+    }
+    80% {
+        opacity: .8;
+        width: 80%;
+        height: 12%;
+        white-space: nowrap;
+    }
+    /*final*/
+    100% {
+        opacity: 1;
+        width: 100%;
+        height: auto;
+        white-space: nowrap;
+    }
+}
+
+/*glitch*/
+
+@keyframes flickertext {
+    0% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow;
+    }
+    2% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow;
+    }
+    3% {
+        color: transparent;
+        text-shadow: none;
+    }
+    4% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow;
+    }
+    5% {
+        color: transparent;
+        text-shadow: none;
+    }
+    6% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow;
+    }
+    29% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow;
+    }
+    30% {
+        color: transparent;
+        text-shadow: none;
+    }
+    31% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow;
+    }
+    50% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow;
+    }
+    51% {
+        color: transparent;
+        text-shadow: none;
+    }
+    52% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow;
+    }
+    100% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow;
+    }
+}
+
+@keyframes flickertext-2 {
+    0% {
+        color: $flickerText-color;
+
+    }
+    2% {
+        color: $flickerText-color;
+
+    }
+    3% {
+        color: transparent;
+
+    }
+    4% {
+        color: $flickerText-color;
+
+    }
+    5% {
+        color: transparent;
+
+    }
+    6% {
+        color: $flickerText-color;
+
+    }
+    29% {
+        color: $flickerText-color;
+
+    }
+    30% {
+        color: transparent;
+
+    }
+    31% {
+        color: $flickerText-color;
+
+    }
+    50% {
+        color: $flickerText-color;
+
+    }
+    51% {
+        color: transparent;
+
+    }
+    52% {
+        color: $flickerText-color;
+
+    }
+    100% {
+        color: $flickerText-color;
+
+    }
+}
+
+@keyframes flickertext-alt {
+    0% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow-alt;
+    }
+    2% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow-alt;
+    }
+    3% {
+        color: transparent;
+        text-shadow: none;
+    }
+    4% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow-alt;
+    }
+    5% {
+        color: transparent;
+        text-shadow: none;
+    }
+    6% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow-alt;
+    }
+    29% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow-alt;
+    }
+    30% {
+        color: transparent;
+        text-shadow: none;
+    }
+    31% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow-alt;
+    }
+    50% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow-alt;
+    }
+    51% {
+        color: transparent;
+        text-shadow: none;
+    }
+    52% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow-alt;
+    }
+    100% {
+        color: $flickerText-color;
+        text-shadow: $text-shadow-alt;
+    }
+}
+
+//glitch effect (rapid back and forth motion of text in x-axis) for top portion of text
+@keyframes glitchytextTop {
+    0% {
+        transform: translateX(7%);
+    }
+    3% {
+        transform: translateX(-8%);
+    }
+    5% {
+        transform: translateX(1%);
+    }
+    8% {
+        transform: translateX(-11%);
+    }
+    10% {
+        transform: translateX(0%);
+    }
+    59% {
+        transform: translateX(0%);
+    }
+    60% {
+        transform: translateX(10%);
+    }
+    62% {
+        transform: translateX(1%);
+    }
+    65% {
+        transform: translateX(3%);
+    }
+    67% {
+        transform: translateX(-9%);
+    }
+    69% {
+        transform: translateX(10%);
+    }
+    71% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+//glitch effect (rapid back and forth motion of text in x-axis) for bottom portion of text
+@keyframes glitchytextBottom {
+    0% {
+        transform: translateX(-9%);
+    }
+    3% {
+        transform: translateX(15%);
+    }
+    5% {
+        transform: translateX(-1%);
+    }
+    8% {
+        transform: translateX(6%);
+    }
+    10% {
+        transform: translateX(0%);
+    }
+    59% {
+        transform: translateX(0%);
+    }
+    60% {
+        transform: translateX(2%);
+    }
+    62% {
+        transform: translateX(-10%);
+    }
+    65% {
+        transform: translateX(3%);
+    }
+    67% {
+        transform: translateX(8%);
+    }
+    69% {
+        transform: translateX(-13%);
+    }
+    71% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+//glitch effect (rapid back and forth motion of text in x-axis) for top portion of text
+@keyframes glitchtop {
+
+    0% {
+        transform: translateX(7%);
+    }
+    10% {
+        transform: translateX(-18%);
+    }
+    20% {
+        transform: translateX(1%);
+    }
+    30% {
+        transform: translateX(-15%);
+    }
+    40% {
+        transform: translateX(10%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    60% {
+        transform: translateX(7%);
+    }
+    70% {
+        transform: translateX(-14%);
+    }
+    80% {
+        transform: translateX(-5%);
+    }
+    90% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+//glitch effect (rapid back and forth motion of text in x-axis) for bottom portion of text
+@keyframes glitchbottom {
+
+    0% {
+        transform: translateX(7%);
+    }
+    10% {
+        transform: translateX(-1%);
+    }
+    20% {
+        transform: translateX(5%);
+    }
+    30% {
+        transform: translateX(-15%);
+    }
+    40% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(10%);
+    }
+    60% {
+        transform: translateX(-8%);
+    }
+    70% {
+        transform: translateX(14%);
+    }
+    80% {
+        transform: translateX(-1%);
+    }
+    90% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+//background img glitch effect
+@keyframes imglitch {
+    0% {
+        transform: translate(0, 0);
+        filter: hue-rotate(0deg);
+    }
+    10% {
+        transform: translate(1.5rem, 0);
+    }
+    20% {
+        transform: translate(-1.5rem, 0);
+    }
+    30% {
+        transform: translate(1.5rem, -3rem);
+    }
+    40% {
+        transform: translate(-1.5rem, 2rem);
+    }
+    50% {
+        transform: translate(-2.5rem, 0);
+    }
+    60% {
+        transform: translate(5rem, 0);
+    }
+    70% {
+        transform: translate(0, 0);
+    }
+    80% {
+        transform: translate(-6rem, -2rem);
+    }
+    81% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes textshake {
+    0% {
+        text-shadow: 0px 0px 0px $nav-link-color;
+    }
+    1% {
+        text-shadow: 2px 0px 10px $color-tertiary;
+    }
+    2% {
+        text-shadow: 0px 3px 0px $color-tertiary;
+    }
+    4% {
+        text-shadow: -2px 10px 0px $color-primary;
+    }
+    6% {
+        text-shadow: 0px 0px 0px $nav-link-color;
+    }
+    10% {
+        text-shadow: 10px 0px 0px $nav-link-color;
+    }
+    11% {
+        text-shadow: -5px 0px 0px $color-tertiary;
+    }
+    14% {
+        text-shadow: 5px -6px 0px $color-secondary;
+    }
+    15% {
+        text-shadow: 0px 10px 0px $color-tertiary;
+    }
+    17% {
+        text-shadow: -3px 0px 0px $color-primary;
+    }
+    19% {
+        text-shadow: 0px 0px 0px $nav-link-color;
+    }
+    58% {
+        text-shadow: 0px 0px 0px $nav-link-color;
+    }
+    60% {
+        text-shadow: 0px 0px 10px $nav-link-color;
+    }
+    61% {
+        text-shadow: 8px 7px 0px $color-tertiary;
+    }
+    64% {
+        text-shadow: -2px -1px 0px $color-primary;
+    }
+    66% {
+        text-shadow: 0px 0px 0px $nav-link-color;
+    }
+    80% {
+        text-shadow: 0px 0px 0px $nav-link-color;
+    }
+    100% {
+        text-shadow: 0px 0px 0px $nav-link-color;
+    }
+}
+
+/*end glitch*/
+
+/*end Keyframes*/

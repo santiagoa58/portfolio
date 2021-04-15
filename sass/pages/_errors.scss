@@ -1,0 +1,35 @@
+//HEADER
+.header--error {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: calc(#{$error-header-size}*1.1);
+
+    @include respond(tab-port) {
+        height: calc(#{$error-header-size-tabport}*1.1);
+    }
+    @include respond(phone) {
+        height: calc(#{$error-header-size-phone}*1.1);
+    }
+    @include respond(device-xs) {
+        height: calc(#{$error-header-size-xsdevice}*1.1);
+    }
+}
+
+#takemehome {
+    padding: 1.75rem $padding-medium;
+}
+
+.section-error {
+    position: relative;
+    padding: $section-padding $section-padding calc(#{$section-padding}*4) $section-padding;
+    height: auto;
+    @include respond(phone) {
+        padding: $section-padding $section-padding calc(#{$section-padding}*2) $section-padding;
+    }
+    overflow-x: hidden;
+}
+
+.error {
+    margin: 0 auto 10rem auto;
+}

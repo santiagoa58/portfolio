@@ -1,0 +1,156 @@
+//COLORS
+$color-primary: rgb(6, 47, 79);
+$color-primary-light: rgb(1, 94, 135);
+$color-primary-dark: rgb(8, 35, 60);
+
+$color-secondary-lightest: rgb(191, 106, 174);
+$color-secondary-lighter: rgb(181, 81, 160);
+$color-secondary-light: rgb(129, 55, 114);
+$color-secondary: rgb(101, 44, 89);
+$color-secondary-dark: rgb(57, 26, 51);
+$color-secondary-darker: rgb(41, 18, 37);
+$color-secondary-darkest: rgb(26, 11, 22);
+
+$color-tertiary: rgb(137, 22, 0);
+$color-tertiary-light: rgb(184, 38, 1);
+$color-tertiary-lighter: rgb(254, 87, 46);
+$color-tertiary-lightest: rgb(254, 120, 86);
+$color-tertiary-dark: rgb(83, 22, 22);
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+$color-grey-light-3: #aaa;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+$color-grey-dark-4: #222;
+
+$color-white: #fff;
+$color-black: #000;
+
+$header-partial-border-color: rgb(184, 38, 1);
+$partial-border-color: rgb(184, 38, 1);
+
+//FONT & TEXT
+$default-font-size: 1.6rem;
+$header-font-size-large: 5rem;
+$header-font-size: 3.5rem;
+$font-size-xlarge: 3.5rem;
+$font-size-large: 2.5rem;
+$font-size-medium: 2rem;
+$letter-spacing-xxxsmall: 0.5px;
+$letter-spacing-xxsmall: .1rem;
+$letter-spacing-xsmall: .15rem;
+$letter-spacing-small-2: .2rem;
+$letter-spacing-small-3: .3rem;
+$letter-spacing-small: .5rem;
+$letter-spacing-medium: 1rem;
+$letter-spacing-medium-2: 1.5rem;
+$letter-spacing-large: 2rem;
+$letter-spacing-xlarge: 3rem;
+
+//GRID
+$grid-width: 120rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 10rem;
+$gutter-horizontal-large: 15rem;
+$gutter-horizontal-small: 7rem;
+$gutter-horizontal-xsmall: 4rem;
+$gutter-horizontal-xxsmall: 2rem;
+
+//BORDER
+$border-radius-small: 3px;
+$border-radius: 1rem;
+$header-partial-border: 1rem;
+$partial-border: .5rem;
+
+//TIME
+$header-entrance: 1.25s;
+
+//PADDING
+$section-padding: 7rem;
+$padding-medium: 3rem;
+$padding-large: 4.25rem;
+$padding-xlarge: 5.5rem;
+$padding-xxlarge: 7rem;
+$padding-small: 2rem;
+$padding-xsmall: 1rem;
+$padding-xxsmall: 0.5rem;
+
+//HEIGHT & WIDTH
+$section-height: 100vh;
+$min-section-height: 43.75em;
+$min-width: 18.75em;
+$min-header-height: 52.5em;
+$action-call-width: 25rem;
+
+//TIMELINE
+$circle-design-border: 6rem;
+$circle-design-border-small: 2rem;
+$circle-timeline-size: 65rem;
+$circle-timeline-contents-size: calc(65rem - 2*6rem); //#{$circle-timeline-size} - 2*#{$circle-design-border}
+$circle-timeline-contents-p-size: calc(65rem - 4*6rem);
+$circle-timeline-size-small: 52rem;
+$circle-design-darkcolor: $color-primary-dark;
+$circle-design-lightcolor: $color-primary-light;
+
+//TIMELINE - RADIO_BUTTON
+$radio-size: 4.5rem;
+$radio-size-inner: 1.75rem;
+$radio-group-top: 3rem;
+$radio-group-width: 33.33333333%;
+$year-letter-spacing: 0.5rem;
+$year-letter-spacing-small: 0.3rem;
+$year-letter-spacing-xsmall: 0.15rem;
+
+//CUBE
+$cube-size: 20rem;
+$cube-size-small: 18rem;
+$cube-size-xsmall: 17rem;
+$cube-top-size: 20%;
+$cube-side-size: 23.55%;
+
+//GLITCH
+$glitchText-bckcolor: rgba($color-black, 1);
+$flickerText-color: $color-white;
+$img-glitch-header-startingpos: right;
+
+//SHADOW
+$text-shadow: 1px 1px 2px $color-black;
+$text-shadow-alt: 1px 1px 4px $color-tertiary;
+$box-shadow: 0 0 1rem 2px rgba(0, 0, 0, 0.5);
+
+//NAVIGATION
+$nav-size: 6rem;
+$nav-pos: 6rem;
+$nav-size-medium: 4.5rem;
+$nav-pos-medium: 4.5rem;
+$nav-size-small: 3.5rem;
+$nav-pos-small: 3.5rem;
+$nav-size-xsmall: 2rem;
+$nav-pos-xsmall: 2rem;
+$nav-pos-xxsmall: 0.5rem;
+$nav-link-color: $color-black;
+$nav-link-bckcolor: $color-white;
+
+//HIVE GRID
+$hive-size: 28rem;
+
+//LOGO
+$logo-size: 10rem;
+$logo-size-large: 20rem;
+
+//ERRORS
+//$error-header-size: $logo-size + $nav-pos-medium;
+$error-header-size: calc(#{$logo-size} + 4.5rem);
+
+//$error-header-size: $logo-size + $nav-pos-small;
+$error-header-size-tabport: calc(#{$logo-size} + 3.5rem);
+
+//$error-header-size: $logo-size + $nav-pos-xsmall;
+$error-header-size-phone: calc(#{$logo-size} + 2rem);
+
+//$error-header-size: $logo-size + $nav-pos-medium;
+$error-header-size-xsdevice: calc(#{$logo-size} + 0.5rem);

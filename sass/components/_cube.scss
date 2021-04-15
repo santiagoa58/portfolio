@@ -1,0 +1,131 @@
+.cube-design {
+    background-color: $color-secondary-lighter;
+    background-image: linear-gradient(30deg,
+    rgba($color-secondary-lightest, 1),
+    rgba($color-secondary-light, 1),
+    rgba($color-secondary, 1));
+
+    &:first-of-type {
+        margin-left: 6rem;
+    }
+    &:last-of-type {
+        margin-right: 5rem;
+    }
+    display: inline-block;
+    position: relative;
+    height: $cube-size;
+    width: $cube-size;
+    @include respond(tab-land) {
+        height: $cube-size-small;
+        width: $cube-size-small;
+        transform: translateX(-25%);
+    }
+    @include respond(tab-port) {
+        height: $cube-size-xsmall;
+        width: $cube-size-xsmall;
+        transform: translateX(-25%);
+    }
+    @include respond(phone) {
+        display: block;
+        &:nth-of-type(n) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    text-align: center;
+    word-spacing: normal;
+
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    &__list {
+        background-color: $color-secondary-lighter;
+        background-image: linear-gradient(30deg,
+        rgba($color-secondary-lightest, .5),
+        rgba($color-secondary-lighter, 1),
+        rgba($color-secondary-light, .7),
+        rgba($color-secondary, .9));
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        position: relative;
+        padding-top: $padding-xsmall;
+        overflow: hidden;
+        &-items {
+            width: 75%;
+            margin: 1.35rem 2rem;
+            @include respond(tab-port) {
+                margin: 1rem 2rem;
+            }
+            &:nth-of-type(even) {
+                text-align: right;
+            }
+            &:nth-of-type(odd) {
+                text-align: left;
+            }
+        }
+    }
+    &__title {
+        display: inline-block;
+        height: $cube-top-size;
+        width: 100%;
+        backface-visibility: hidden;
+
+        background-color: $color-secondary-dark;
+        background-image: linear-gradient(5deg,
+        $color-secondary,
+        $color-secondary-dark);
+
+        position: absolute;
+        top: calc(#{$cube-top-size}*-1);
+        left: 0;
+        line-height: calc(#{$cube-size}/6); //center text vertically
+        @include respond(tab-land) {
+            line-height: calc(#{$cube-size-small}/6);
+        }
+        @include respond(tab-port) {
+            line-height: calc(#{$cube-size-xsmall}/6);
+        }
+        transform-origin: bottom;
+        transform: skewX(-50deg) translate(calc(#{$cube-top-size}/200), calc(#{$cube-top-size}/200));
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: $cube-side-size;
+        background-color: $color-secondary-darker;
+        background-image: linear-gradient(89deg,
+        $color-secondary-darker,
+        $color-secondary-darkest);
+        top: 0%;
+        left: 100%;
+        transform-origin: left;
+        transform: skewY(-40deg);
+
+    }
+}
+
+.section-skills .cube-design {
+    &__title {
+        box-shadow: calc(#{$cube-size}*1.3) calc(#{$cube-size}*.9) 5rem 3rem rgba(0, 0, 0, 0.65);
+        @include respond(tab-land) {
+            box-shadow: calc(#{$cube-size-small}*1.3) calc(#{$cube-size-small}*.9) 5rem 3rem rgba(0, 0, 0, 0.65);
+        }
+        @include respond(tab-port) {
+            box-shadow: calc(#{$cube-size-xsmall}*1.3) calc(#{$cube-size-xsmall}*.9) 5rem 3rem rgba(0, 0, 0, 0.65);
+        }
+        z-index: 1;
+    }
+    &__list {
+        z-index: 2;
+    }
+    &::after {
+        z-index: 2;
+    }
+}

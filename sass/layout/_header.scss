@@ -1,0 +1,93 @@
+.header {
+    position: relative;
+    height: 100vh;
+    min-height: $min-header-height;
+    overflow: hidden;
+    background-image: linear-gradient(to right top,
+    rgba($color-secondary-dark, .9),
+    rgba($color-black, .8),
+    rgba($color-primary-dark, .8)),
+    url('../img/plane-small.jpg');
+
+    background-size: cover;
+    background-position: $img-glitch-header-startingpos;
+    background-attachment: fixed;
+
+    /*resolution of apple retina screen = 192dpi (dots per inch) [high res screen for reference]*/
+    /* 600px/16px = 37.5em & 2000px/16px = 125em*/
+    /*min-device-pixel-ratio:2 is for safari (2x pixels)*/
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio:2) and (min-width: 37.5em),
+    only screen and (min-width: 125em) {
+        background-image: linear-gradient(to right top,
+        rgba($color-secondary-dark, .9),
+        rgba($color-black, .8),
+        rgba($color-primary-dark, .8)),
+        url('../img/plane.jpg');
+    }
+    /*
+    @media only screen and (hover: none) {
+        background-attachment: scroll;
+    }
+    */
+    &__logo-box {
+        position: absolute;
+        top: $nav-pos-medium;
+        left: $nav-pos-medium;
+
+        @include respond(tab-port) {
+            top: $nav-pos-small;
+            left: $nav-pos-small;
+        }
+        @include respond(phone) {
+            top: $nav-pos-xsmall;
+            left: $nav-pos-xsmall;
+        }
+        @include respond(device-xs) {
+            top: $nav-pos-xxsmall;
+            left: $nav-pos-xxsmall;
+        }
+
+        animation: fadeIn 1s ease-in;
+    }
+    &__logo {
+        height: $logo-size;
+        width: auto;
+
+    }
+
+    &__text-box {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &-entry {
+        //properties to be animated at start
+        display: inline-block;
+        opacity: 1;
+        width: auto;
+        height: auto;
+        overflow: hidden;
+        animation: appear $header-entrance ease-in-out;
+        white-space: normal;
+    }
+}
+
+#action-call {
+    width: $action-call-width;
+    margin: 35% auto 0 auto;
+    transform: translateY(0);
+    animation: actioncallDrop $header-entrance ease-in-out;
+
+    & a.btn-partialbox {
+        &,
+        &:link,
+        &:visited {
+            width: 100%;
+        }
+    }
+}

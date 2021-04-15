@@ -1,0 +1,245 @@
+/*needs to have ::before and ::after with same background color as the content's background color*/
+
+//.glitch-text {
+//
+//    @supports(((clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)))) {
+//        position: relative;
+//        display: inline-block;
+//        background-color: $glitchText-bckcolor;
+//        transform: translateY(25%);
+//        overflow: hidden;
+//        padding: .1rem;
+//
+//        &:nth-of-type(n)::before,
+//        &:nth-of-type(n)::after {
+//            animation: glitchytext 2.5s infinite linear;
+//        }
+//        &:nth-of-type(2n)::before,
+//        &:nth-of-type(2n)::after {
+//            animation: glitchytext 2.2s infinite linear;
+//        }
+//        &:nth-of-type(3n)::before,
+//        &:nth-of-type(3n)::after {
+//            animation: glitchytext 2.1s infinite linear;
+//        }
+//    }
+//} //the glitchytext animation uses clip-path
+//.glitch-text::after,
+//.glitch-text::before {
+//
+//    @supports(((clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)))) {
+//        content: attr(value);
+//        position: absolute;
+//        top: 0;
+//        left: 0;
+//        right: 0;
+//        overflow: hidden;
+//        background-color: $glitchText-bckcolor;
+//    }
+//}
+//
+//.glitch-text::before {
+//
+//    @supports(((clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)))) {
+//        left: 1.5rem;
+//        text-shadow: .2rem 0 transparent;
+//    }
+//}
+//
+//.glitch-text::after {
+//
+//    @supports(((clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)))) {
+//        left: -.5rem;
+//        text-shadow: -.2rem 0 transparent;
+//    }
+//}
+/*end glitch-text and its dependency with the background-color*/
+
+//GLITCHY TEXT
+.glitch-text,
+.glitch-text--large {
+    position: relative;
+    display: inline-block;
+    text-shadow: none;
+    line-height: 1;
+    color: transparent;
+
+    &:nth-of-type(n)::before {
+        animation: glitchytextTop 2.15s infinite linear;
+    }
+    &:nth-of-type(2n)::before {
+        animation: glitchytextTop 1.85s infinite linear;
+    }
+    &:nth-of-type(3n)::before {
+        animation: glitchytextTop 2s infinite linear;
+    }
+
+    &:nth-of-type(n)::after {
+        animation: glitchytextBottom 2.15s infinite linear;
+    }
+    &:nth-of-type(2n)::after {
+        animation: glitchytextBottom 1.85s infinite linear;
+    }
+    &:nth-of-type(3n)::after {
+        animation: glitchytextBottom 2s infinite linear;
+    }
+
+    &::after,
+    &::before {
+        content: attr(value);
+        position: absolute;
+        height: 50%;
+        overflow: hidden;
+    }
+
+    &::before {
+        text-shadow: 0rem 0rem $color-white;
+        color: transparent;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        height: 50%;
+    }
+
+    &::after {
+        color: transparent;
+        top: 50%;
+        right: 0;
+        z-index: 1;
+        height: 50%;
+    }
+
+    &:hover {
+        &::before,
+        &::after {
+            animation: none;
+        }
+    }
+
+}
+
+.glitch-text {
+
+    &::after {
+        text-shadow: 0rem calc(#{$default-font-size}/(-1.95)) $color-white;
+    }
+
+    &--large {
+        &::after {
+            text-shadow: 0rem calc(#{$font-size-xlarge}/(-1.95)) $color-white;
+        }
+    }
+}
+
+
+//RAPID FLICKERING OF TEXT (RAPID "ON AND OFF")
+.flicker-text,
+.flicker-text__simple {
+    background-color: transparent;
+    color: $flickerText-color;
+}
+
+.flicker-text {
+    &:nth-of-type(n) {
+        animation: flickertext 3.5s infinite linear;
+    }
+    &:nth-of-type(2n) {
+        animation: flickertext 3s infinite linear;
+    }
+    &:nth-of-type(3n) {
+        animation: flickertext 3.7s infinite linear;
+    }
+}
+
+.flicker-text__simple {
+    &:nth-of-type(n) {
+        animation: flickertext-2 3.5s infinite linear;
+    }
+    &:nth-of-type(2n) {
+        animation: flickertext-2 3s infinite linear;
+    }
+    &:nth-of-type(3n) {
+        animation: flickertext-2 3.7s infinite linear;
+    }
+}
+
+//TOP AND BOTTOM PORTION OF TEXT RAPID RANDOM MOTION IN X-DIRECTION
+.glitch {
+    position: relative;
+    display: inline-block;
+    background: transparent;
+    color: transparent;
+    text-shadow: none;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(value);
+    position: absolute;
+    color: $color-grey-light-2;
+    top: 0;
+    left: 0;
+}
+
+.glitch:hover {
+    &::before {
+        animation: glitchtop 0.6s 1 linear;
+    }
+
+    &::after {
+        animation: glitchbottom 0.6s 1 linear;
+    }
+}
+
+.glitch::before {
+    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+
+        -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+    }
+
+}
+
+.glitch::after {
+    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+
+        -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%);
+        clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%);
+    }
+}
+
+//BACKGROUND IMAGE RAPID BACK AND FORTH DISPLACEMENT AND COLOR CHANGING
+.glitch-img__header {
+    position: relative;
+    animation: imglitch .4s 2 linear;
+    animation-delay: $header-entrance;
+}
+
+.glitch-img__header::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    overflow: hidden;
+
+    background-image: url('../img/plane-xsmall.jpg');
+    background-position: $img-glitch-header-startingpos;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio:2) and (min-width: 37.5em),
+    only screen and (min-width: 125em) {
+        background-image: url('../img/plane-small.jpg');
+    }
+
+    /*
+    @media only screen and (hover: none) {
+        background-attachment: scroll;
+    }*/
+    animation: imglitch .4s 2 linear;
+    animation-delay: $header-entrance;
+}

@@ -1,0 +1,274 @@
+body {
+    font-family: "Lato", sans-sarif;
+    font-weight: 400;
+    font-size: $default-font-size;
+    line-height: 1.7;
+    color: $color-grey-light-1;
+    background-color: $color-primary-dark;
+}
+
+.navigation {
+    &__link {
+        &:link,
+        &:visited {
+            font-size: $font-size-medium;
+            @include respond(phone) {
+                font-size: $default-font-size;
+            }
+            font-weight: 300;
+            color: $color-white;
+            text-shadow: none;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    text-shadow: $text-shadow;
+
+    /*hack: fix shaky entrance due to animation*/
+    backface-visibility: hidden;
+    &--main,
+    &--sub {
+        padding: $padding-small 0;
+        display: block;
+    }
+    &--main {
+
+        font-size: $header-font-size-large;
+        font-weight: 700;
+        letter-spacing: $letter-spacing-medium-2;
+        @include respond(phone) {
+            letter-spacing: $letter-spacing-small;
+            font-size: $header-font-size;
+        }
+    }
+
+    &--sub {
+        font-size: $font-size-large;
+        font-weight: 700;
+        letter-spacing: $letter-spacing-medium;
+        @include respond(phone) {
+            font-size: 1.85rem;
+            letter-spacing: .25rem;
+        }
+    }
+}
+
+.heading-secondary {
+
+    backface-visibility: hidden;
+    font-size: $font-size-xlarge;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right top, $color-grey-light-2, $color-tertiary-light);
+    -webkit-background-clip: text; //cuts, or clips, the background exactly where the text is
+    color: transparent;
+    letter-spacing: $letter-spacing-small-2;
+    transition: all .2s;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+    @include respond(phone) {
+        font-size: $font-size-large;
+    }
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .25);
+    }
+}
+
+.heading-tertiary {
+    color: $color-white;
+    font-size: calc(#{$default-font-size} + 0.4rem);
+    ;
+    font-weight: 700;
+    text-shadow: $text-shadow;
+    @include respond(phone) {
+        font-size: calc(#{$default-font-size} + .1rem);
+    }
+}
+
+.navigation,
+.heading-tertiary,
+.heading-secondary,
+.heading-primary {
+    font-family: 'Megrim', cursive;
+}
+
+.paragraph {
+    font-size: $default-font-size;
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
+
+#action-call {
+    letter-spacing: $letter-spacing-small-3;
+}
+
+.section-timeline {
+    &__contents {
+        &-year {
+            font-size: calc(#{$default-font-size} + .4rem);
+        }
+        &-p {
+            letter-spacing: $letter-spacing-xxxsmall;
+            line-height: 2;
+        }
+    }
+
+
+    &__contents-year,
+    &__radio-label {
+        letter-spacing: $year-letter-spacing;
+        @include respond(phone) {
+            letter-spacing: $year-letter-spacing-small;
+        }
+        @include respond(device-xs) {
+            letter-spacing: $year-letter-spacing-xsmall;
+        }
+    }
+}
+
+.section-skills .row {
+    text-align: center;
+    word-spacing: $gutter-horizontal-large;
+}
+
+.cube-design {
+    text-shadow: $text-shadow;
+    &__list {
+        letter-spacing: $letter-spacing-xsmall;
+        &-items {
+            text-transform: uppercase;
+        }
+    }
+    &__title {
+        letter-spacing: $letter-spacing-small-3;
+        text-transform: uppercase;
+        color: rgba($color-white, 1);
+    }
+}
+
+.section-game {
+    &__results {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: $font-size-medium;
+        letter-spacing: $letter-spacing-xsmall;
+    }
+}
+
+.form {
+    &__input {
+        font-family: inherit;
+        color: $color-black;
+        font-size: inherit;
+
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-3;
+        }
+    }
+    &__label {
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: $letter-spacing-xxxsmall;
+    }
+}
+
+.highlight,
+.highlight-alt,
+.highlight-link {
+    display: inline-block;
+    background-color: transparent;
+    font-weight: 700;
+    margin: .3rem;
+    border-radius: 3px;
+
+    padding: 0px 3px;
+    position: relative;
+    transition: all .2s;
+}
+
+.highlight,
+.highlight-link {
+    color: $color-white;
+    letter-spacing: $letter-spacing-xxsmall;
+
+    &:hover {
+        transform: scale(1.2) rotate(6deg);
+        transform-origin: center;
+        box-shadow: $box-shadow;
+    }
+}
+
+.highlight {
+    @supports(-webkit-background-clip: text) {
+        background-image: linear-gradient(to left top, rgba($color-grey-light-2, 0.9), rgba($color-primary-light, 0.7));
+        -webkit-background-clip: text; //cuts, or clips, the background exactly where the text is
+        color: rgba($color-white, 0.4);
+    }
+
+    &:hover {
+        @supports(-webkit-background-clip: text) {
+            background-image: linear-gradient(to right bottom, rgba($color-white, 0.98), rgba($color-white, 0.5));
+        }
+    }
+}
+
+.highlight-link {
+    &:active {
+        transform: scale(1.2) rotate(6deg);
+        transform-origin: center;
+        box-shadow: $box-shadow;
+    }
+}
+
+.highlight-alt {
+    box-shadow: 0px 0px 3rem .25rem rgba($color-secondary-lightest, 0.95);
+}
+
+.submit-error {
+    text-align: right;
+    text-transform: capitalize;
+    letter-spacing: $letter-spacing-xxxsmall;
+    color: $color-tertiary-lightest;
+    text-shadow: $text-shadow;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+#takemehome {
+    font-size: $font-size-medium;
+}
+
+.section-error {
+    letter-spacing: $letter-spacing-xxsmall;
+    text-align: center;
+    line-height: calc(#{$default-font-size}*5);
+}
+
+.error {
+    &--title {
+        text-transform: uppercase;
+        font-size: $font-size-xlarge;
+    }
+
+    &--info {
+        text-transform: uppercase;
+        font-size: $font-size-medium;
+    }
+}

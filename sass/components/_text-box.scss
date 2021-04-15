@@ -1,0 +1,156 @@
+.text-box {
+    width: 50%;
+    @include respond(big-desktop) {
+        width: 40%;
+    }
+    @include respond(tab-land) {
+        width: 65%;
+    }
+    @include respond(phone) {
+        width: 75%;
+    }
+    @include respond(device-xs) {
+        width: 95%;
+    }
+    max-width: 80rem;
+    margin: 0 auto;
+    animation: textboxExpand $header-entrance ease-in-out;
+}
+
+.partial-box {
+
+    &__top,
+    &__bottom,
+    &__top--inverted,
+    &__bottom--inverted {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        border-color: $header-partial-border-color;
+        border-width: $header-partial-border;
+
+        &::before,
+        &::after {
+            position: absolute;
+            display: block;
+            height: $header-partial-border;
+            width: calc(#{$header-partial-border}*6);
+            background-color: $header-partial-border-color;
+        }
+    }
+
+    &__top {
+        border-left-style: solid;
+
+        &::before {
+            left: 0;
+            top: 0;
+            content: " ";
+        }
+    }
+
+    &__bottom {
+        border-right-style: solid;
+
+        &::after {
+            right: 0;
+            bottom: 0;
+            content: " ";
+
+
+        }
+    }
+
+    &__top--inverted {
+        border-left-style: solid;
+
+        &::before {
+            right: 0;
+            top: 0;
+            content: " ";
+        }
+    }
+
+    &__bottom--inverted {
+        border-right-style: solid;
+
+        &::after {
+            left: 0;
+            bottom: 0;
+            content: " ";
+        }
+    }
+}
+
+.partial-smallbox {
+
+    &__top,
+    &__bottom,
+    &__top--inverted,
+    &__bottom--inverted {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        border-color: $partial-border-color;
+        border-width: $partial-border;
+        background-color: rgba($color-black, 0.2);
+        transition: all 0.2s ease-out;
+
+
+        &::before,
+        &::after {
+            position: absolute;
+            display: block;
+            height: $partial-border;
+            width: calc(#{$partial-border}*6);
+            background-color: $partial-border-color;
+        }
+    }
+
+    &__top {
+        border-left-style: solid;
+        padding-top: $padding-xsmall;
+        padding-left: $padding-xxsmall;
+        &::before {
+            left: 0;
+            top: 0;
+            content: " ";
+        }
+    }
+
+    &__bottom {
+        border-right-style: solid;
+        padding-bottom: $padding-xsmall;
+        padding-right: $padding-xxsmall;
+
+        &::after {
+            right: 0;
+            bottom: 0;
+            content: "";
+        }
+    }
+
+    &__top--inverted {
+        border-left-style: solid;
+        padding-top: $padding-xsmall;
+        padding-right: $padding-xxsmall;
+
+        &::before {
+            right: 0;
+            top: 0;
+            content: " ";
+        }
+    }
+
+    &__bottom--inverted {
+        border-right-style: solid;
+        padding-bottom: $padding-xsmall;
+        padding-left: $padding-xxsmall;
+
+        &::after {
+            left: 0;
+            bottom: 0;
+            content: " ";
+        }
+    }
+}

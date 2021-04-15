@@ -1,0 +1,92 @@
+.btn,
+.btn-partialbox {
+    &,
+    &:link,
+    &:visited {
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: auto;
+
+        transition: all 0.3s;
+        font-size: $default-font-size;
+
+        cursor: pointer;
+    }
+
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: .1rem 1rem 2rem rgba($color-black, 0.2);
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-.1rem);
+        box-shadow: .1rem .5rem 1rem rgba($color-black, 0.2);
+    }
+}
+
+.btn {
+    &,
+    &:link,
+    &:visited {
+        padding: $padding-xsmall $padding-small;
+        border-radius: $border-radius;
+        background-color: rgba($color-primary-light, 0.8);
+        color: $color-white;
+        display: inline-block;
+        /*Change for <button> element*/
+        border: none;
+    }
+    &:hover {
+        &::after {
+            transform: scaleX(1.5) scaleY(1.6);
+            /*fade out*/
+            opacity: 0;
+        }
+    }
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        background-color: inherit;
+        border-radius: $border-radius;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        transition: all 0.4s;
+    }
+
+}
+
+.btn-partialbox {
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        padding: $padding-xsmall 1.5rem;
+        border-radius: none;
+    }
+
+    &:hover {
+        border-width: 0rem;
+        &::after,
+        &::before {
+            margin: 1rem 0;
+            width: 100%;
+            height: 0rem;
+            transform: scaleX(1.5) scaleY(1.6);
+            opacity: 1;
+        }
+    }
+
+    &::after,
+    &::before {
+        transition: all 0.3s ease-in-out;
+    }
+}

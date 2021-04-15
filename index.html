@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Santiago Gomez">
+    <meta name="description" content="Santiago Gomez is a self-motivated developer who actively seeks to expand his knowledge and gain valuable experience in the world of programming and web design.">
+    <meta name="keywords" content="Santiago Gomez, gomezsantiago, resume website, front end, frontend web developer, web designer, html css javascript, strong work ethic, self motivated, bilingual">
+    <base href="https://www.gomezsantiago.com/">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+    <title>Santiago Gomez | Web Developer Resume | Portfolio</title>
+</head>
+
+<body>
+
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+        <label for="navi-toggle" class="navigation__button"><span class="navigation__icon">&nbsp;</span></label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#landing" class="navigation__link"><span class="fas fa-home"></span> Home</a></li>
+                <li class="navigation__item"><a href="#aboutMe" class="navigation__link"><span class="fas fa-address-card"></span> About Me</a></li>
+                <li class="navigation__item"><a href="#timeline" class="navigation__link"><span class="fas fa-clock"></span> Timeline</a></li>
+                <li class="navigation__item"><a href="#skills" class="navigation__link"><span class="fas fa-pencil-ruler"></span> Skills</a></li>
+                <li class="navigation__item"><a href="#portfolio" class="navigation__link"><span class="fas fa-folder-open"></span> Portfolio</a></li>
+                <li class="navigation__item"><a href="#contactMe" class="navigation__link"><span class="fas fa-envelope"></span> Contact Me</a></li>
+                <li class="navigation__item"><a href="#tictactoe" class="navigation__link"><span class="fas fa-gamepad"></span> Tic-Tac-Toe</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="header" id="landing">
+        <div class="header__logo-box">
+            <img src="img/sg-logo-1x.png" alt="logo" class="header__logo">
+        </div>
+        <div class="header__text-box">
+            <!--text with partial borders on corners-->
+            <div class="text-box">
+                <div class="partial-box">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary heading-primary--main partial-box__top"><span class="header-entry" value="Santiago Gomez">Santiago Gomez</span></span>
+                        <span class="heading-primary heading-primary--sub partial-box__bottom"><span class="header-entry">web developer</span>
+                        </span>
+                    </h1>
+                </div>
+
+
+                <div id="action-call">
+                    <a href="#contactMe" class="btn-partialbox partial-box__top--inverted partial-box__bottom--inverted heading-tertiary">
+                        <span class="header-entry"><span class="glitch" value="Contact Me">Contact Me</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <!--ABOUT_ME-->
+        <section class="section-about" id="aboutMe">
+            <!--row-->
+            <div class="row section-row">
+                <!--column-->
+                <div class="col-1-of-2 section-row__heading">
+                    <h2 class="heading-secondary glitch" value="About Me">About Me</h2>
+                </div>
+                <!--column-->
+                <div class="col-1-of-2">
+                    <div class="section-row__contents">
+                        <h3 class="u-margin-bottom-medium u-center-text heading-tertiary">A web developer and a lifelong learner</h3>
+                        <p class="paragraph">
+                            My name is <span class="" value="Santiago Gomez">Santiago Gomez</span>, I am self motivated, hard working, and constantly seeking new things to learn. I studied Mechanical Engineering at CUNY City College for 3 years, but then decided to pursue a B.A. in <span class="" value="Computer Science">Computer Science</span> at CUNY Queens College instead.
+                        </p>
+                        <p class="paragraph">
+                            I have studied many subjects on my own. Some of these include Web Development, Psychology, art, and languages.
+                        </p>
+                        <p class="paragraph">
+                            Currently I am seeking to combine the back-end knowledge I gained through school with the front-end knowledge I gained on my own to become a well rounded Full Stack Web Developer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--TIMELINE-->
+        <section class="section-timeline" id="timeline">
+            <!--timeline heading-->
+            <div class="section-heading">
+                <h2 class="heading-secondary glitch" value="timeline">Timeline</h2>
+            </div>
+
+            <!--Timeline year selection-->
+            <div class=" section-timeline__container">
+                <!--2013-Today-->
+                <div class="section-timeline__radio-group">
+                    <input type="radio" class="section-timeline__radio-input" id="2013" name="year" onclick="yearchange('2013-today',this)">
+                    <label for="2013" class="section-timeline__radio-label heading-tertiary">
+                    <span class="section-timeline__radio-button"></span>
+                        <span class="">2013 - Today</span>
+                </label>
+                </div>
+
+                <!--2014-2017-->
+                <div class="section-timeline__radio-group">
+                    <input type="radio" class="section-timeline__radio-input" id="2014" name="year" onclick="yearchange('2014-2017',this)">
+                    <label for="2014" class="section-timeline__radio-label heading-tertiary">
+                    <span class="section-timeline__radio-button"></span>
+                        <span class="">2014 - 2017</span>
+                </label>
+                </div>
+
+                <!--2017-2019-->
+                <div class="section-timeline__radio-group">
+                    <input type="radio" class="section-timeline__radio-input" id="2017" name="year" onclick="yearchange('2017-2019',this)" checked="checked">
+                    <label for="2017" class="section-timeline__radio-label heading-tertiary">
+                    <span class="section-timeline__radio-button"></span>
+                        <span class="partial-smallbox__top partial-smallbox__bottom">2017 - 2019</span>
+                </label>
+                </div>
+            </div>
+
+            <!--Timeline content info-->
+            <div class="section-timeline__container">
+                <div class="row section-timeline__row circle-design">
+
+                    <!--2017-2019-->
+                    <div class="section-timeline__contents" id="first-shown">
+                        <h3 class="section-timeline__contents-year 2017-2019 heading-tertiary">2017 - 2019</h3>
+                        <p class="section-timeline__contents-p 2017-2019">Transfered to <span class="highlight-alt">CUNY Queens College</span> to pursue a B.A. degree in <span class="highlight-alt">Computer Science</span> with a minor in <span class="highlight-alt">Mathematics</span>. Courses taken include Database Design, Biometric Security, and Software Engineering. <span class="highlight-alt">graduating class of 2019</span>.</p>
+                    </div>
+
+                    <!--2014-2017-->
+                    <div class="section-timeline__contents">
+                        <h3 class="section-timeline__contents-year 2014-2017 heading-tertiary">2014 - 2017</h3>
+                        <p class="section-timeline__contents-p 2014-2017">Studied <span class="highlight-alt">Mechanical Engineering</span> for 3 years at <span class="highlight-alt">CUNY City College of New York</span>, which allowed me to further develop my analytical and problem solving skills. Some courses taken include Fluid Mechanics, Mechanical Systems Design, and Computer Aided Design.</p>
+                    </div>
+
+                    <!--2013-Today-->
+                    <div class="section-timeline__contents">
+                        <h3 class="section-timeline__contents-year 2013-today heading-tertiary">2013 - Today</h3>
+                        <p class="section-timeline__contents-p 2013-today">Started working at the <span class="highlight-alt">Bowery Hotel</span> as a Busser and then as a <span class="highlight-alt">Barback</span>, where tasks included quickly and efficiently stocking the bar prior to and during an event with everything needed for the bartenders to cater to the customers' needs. Soon afterwards I also began taking shifts as a <span class="highlight-alt">Server</span> where I was responsible for catering and interacting with clients during special events such as birthdays, fundraisers, and weddings. This is still my <span class="highlight-alt">current employer</span>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--SKILLS-->
+        <section class="section-skills" id="skills">
+            <div class="section-heading">
+                <h2 class="heading-secondary glitch" value="skills">skills</h2>
+            </div>
+            <div class="section-skills__content">
+                <div class="row">
+                    <div class="cube-design u-margin-bottom-huge">
+                        <h3 class="cube-design__title"><span class="glitch" value="Technical">Technical</span></h3>
+                        <ul class="cube-design__list">
+                            <li class="cube-design__list-items">PHP</li>
+                            <li class="cube-design__list-items">
+                                MYSQL</li>
+                            <li class="cube-design__list-items">TSQL</li>
+                        </ul>
+                    </div>
+                    <div class="cube-design u-margin-bottom-huge">
+                        <h3 class="cube-design__title"><span class="glitch" value="Languages">Languages</span></h3>
+                        <ul class="cube-design__list">
+                            <li class="cube-design__list-items">English</li>
+                            <li class="cube-design__list-items">Russian</li>
+                            <li class="cube-design__list-items">Italian</li>
+                            <li class="cube-design__list-items">Spanish</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cube-design u-margin-bottom-huge">
+                        <h3 class="cube-design__title"><span class="glitch" value="Technical">Technical</span></h3>
+                        <ul class="cube-design__list">
+                            <li class="cube-design__list-items">HTML</li>
+                            <li class="cube-design__list-items">XML</li>
+                            <li class="cube-design__list-items">CSS</li>
+                            <li class="cube-design__list-items">Sass</li>
+                        </ul>
+                    </div>
+                    <div class="cube-design u-margin-bottom-huge">
+                        <h3 class="cube-design__title"><span class="glitch" value="Technical">Technical</span></h3>
+                        <ul class="cube-design__list">
+                            <li class="cube-design__list-items">JAVA</li>
+                            <li class="cube-design__list-items">C++</li>
+                            <li class="cube-design__list-items">JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="cube-design">
+                        <h3 class="cube-design__title"><span class="glitch" value="Technical">Technical</span></h3>
+                        <ul class="cube-design__list">
+                            <li class="cube-design__list-items">SOLIDWORKS</li>
+                            <li class="cube-design__list-items">Android</li>
+                            <li class="cube-design__list-items">Microsoft Office</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--PORTFOLIO-->
+        <section class="section-portfolio" id="portfolio">
+            <div class="section-heading">
+                <h2 class="heading-secondary glitch" value="Portfolio">Portfolio</h2>
+            </div>
+            <div class="section-portfolio__content">
+                <!--portfolio info-->
+                <div class="hive-row">
+                    <div class="section-row__contents hive-row__info">
+                        <p class="paragraph"><a class="highlight" href="http://www.how2bar.gomezsantiago.com" target="_blank">How2Bar:</a> Bartending website made using HTML, CSS, and JavaScript. All content was researched and written by me.</p>
+                        <p class="paragraph"><a class="highlight" href="http://www.sharepost.gomezsantiago.com/" target="_blank">SharePost:</a> Post sharing website made using PHP, MySQL, and Bootstrap. It features a login system and custom error pages using htaccess.</p>
+                        <p class="paragraph"><a class="highlight" href="http://www.sg.gomezsantiago.com" target="_blank">GomezSantiago:</a> First web design project and first version of this resume website. It uses HTML, CSS, and JavaScript.</p>
+                        <p class="paragraph"><a class="highlight" href="#tictactoe">Tic-Tac-Toe:</a> A simple tic-tac-toe game made using only JavaScript.</p>
+                        <p class="paragraph"><a class="highlight" href="http://natours.gomezsantiago.com/" target="_blank">Natours:</a> A dummy outdoor tours website that utilizes advanced css and sass. It was made as part of an <a href="https://www.udemy.com/advanced-css-and-sass/learn/v4/overview" target="_blank" class="highlight-link">advanced css and sass</a> course on Udemy by Jonas Schmedtmann.</p>
+                    </div>
+                </div>
+                <!--hive grid-->
+                <div class="hive-row">
+                    <div class="hive">
+                        <div class="hive-design">
+                            <div class="hive-design__contents">
+                                <a href="http://how2bar.gomezsantiago.com" target="_blank"><img src="./img/portfolio_bar.png" alt="Bartending Website"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hive">
+                        <div class="hive-design">
+                            <div class="hive-design__contents">
+                                <a href="http://sharepost.gomezsantiago.com" target="_blank"><img src="./img/portfolio_sharepost.png" alt="Post Sharing Website"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hive">
+                        <div class="hive-design">
+                            <div class="hive-design__contents">
+                                <a href="http://sg.gomezsantiago.com" target="_blank"><img src="./img/portfolio_resume-v1.png" alt="resume website version: 1"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hive-row">
+                    <div class="hive">
+                        <div class="hive-design">
+                            <div class="hive-design__contents">
+                                <a href="#tictactoe"><img src="./img/portfolio_tictactoe.png" alt="tic-tac-toe javascript game"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hive">
+                        <div class="hive-design">
+                            <div class="hive-design__contents">
+                                <a href="http://natours.gomezsantiago.com/" target="_blank"><img src="./img/portfolio_natours.png" alt="Bartending Website"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--CONTACT ME-->
+        <section class="section-contactme" id="contactMe">
+            <!--row-->
+            <div class="row">
+                <!--column-->
+                <div class="col-1-of-2 section-row__heading">
+                    <h2 class="heading-secondary glitch" value="Contact Me">Contact Me</h2>
+                </div>
+                <!--column-->
+                <div class="col-1-of-2">
+                    <form id="contactmeform" class="form" onsubmit="formsubmit(); return false;">
+                        <h3 class="u-margin-bottom-medium u-center-text heading-tertiary"></h3>
+                        <div class="form__group">
+                            <input type="text" class="form__input" placeholder="Full Name" id="name" required>
+                            <label for="name" class="form__label">Full Name</label>
+                        </div>
+
+                        <div class="form__group">
+                            <input type="email" class="form__input" placeholder="Email Address" id="email" required>
+                            <label for="email" class="form__label">Email Address</label>
+                            <h4 class="submit-error"></h4>
+                        </div>
+
+                        <div class="form__group">
+                            <textarea class="form__input form__textarea" placeholder="Message" id="message" required></textarea>
+                            <label for="message" class="form__label">Message</label>
+                        </div>
+
+                        <div class="form__group u-margin-top-medium u-margin-bottom-small"><button type="submit" value="submit" class="btn" id="sendbtn">Send <i class="fas fa-envelope"></i></button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!--JAVASCRIPT GAME-->
+        <section class="section-game" id="tictactoe">
+            <div class="section-heading">
+                <h2 class="heading-secondary glitch" value="Tic-Tac-Toe">Tic-Tac-Toe</h2>
+            </div>
+            <div class="section-game__content" id="tictactoeContent">
+                <h3 class="section-game__results"></h3>
+                <canvas></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__logo-box">
+
+            <picture class="footer__logo">
+                <!--1x (<-density descriptor) for low res screen & 2x for high res-->
+                <img srcset="img/sg-logo-1x.png 1x, img/sg-logo-2x.png 2x" alt="Full logo" src="img/sg-logo-2x.png">
+            </picture>
+
+        </div>
+        <div class="row">
+            <div class="col-1-of-2">
+                <div class="footer__navigation">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="https://www.instagram.com/santiarrubla" target="_blank" class="footer__link"><i class="fab fa-instagram"></i></a></li>
+                        <li class="footer__item"><a href="#contactMe" class="footer__link"><i class="fas fa-envelope"></i></a></li>
+                        <li class="footer__item"><a href="https://www.linkedin.com/in/santiago-gomez-13b4a9115/" target="_blank" class="footer__link"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1-of-2">
+                <p class="footer__copyright">
+                    Designed and Developed by <span class="footer__link">Santiago Gomez</span> using sass, php, and javascript. Copyright <span class="footer__link">&copy; GomezSantiago.com</span> 2018.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/zenscroll-min.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/gamescript.js"></script>
+</body>
+
+</html>

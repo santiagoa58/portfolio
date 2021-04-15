@@ -1,0 +1,79 @@
+.form {
+    box-shadow: $box-shadow;
+    background-color: rgba($color-secondary, 0.5);
+
+    padding: $padding-medium;
+    @include respond(tab-port) {
+        padding: $padding-medium $padding-xlarge;
+    }
+    @include respond(phone) {
+        padding: $padding-medium;
+    }
+    @include respond(device-xs) {
+        padding: $padding-small;
+    }
+    border-radius: $border-radius;
+    &__group {
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__input {
+        padding: 1.5rem $padding-small;
+        border-radius: $border-radius;
+        background-color: rgba($color-white, 0.65);
+        border: none;
+        border-bottom: 3px solid;
+        border-bottom-color: transparent;
+        width: 100%;
+        display: block;
+        transition: all .3s;
+
+        @include respond (tab-port) {
+            width: 100%;
+        }
+
+        &:focus {
+            outline: none;
+            background-color: rgba($color-white, 0.8);
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom-color: $color-primary-light;
+
+            &:invalid {
+                border-bottom-color: $color-tertiary-lighter;
+            }
+        }
+    }
+
+    &__label {
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
+    &__textarea {
+        height: 35rem;
+        @include respond(tab-port) {
+            height: 25rem;
+        }
+        @include respond(phone) {
+            height: 30rem;
+        }
+        @include respond(device-xs) {
+            height: 35rem;
+        }
+    }
+    /* + adjacent sibling selector, the first sibling (the one next to it)... the selected adjacent sibling must come after the current sibling (in this case the label must come after the input)*/
+    /* ~ general sibling selector, used if there are more elements in between*/
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4.5rem);
+    }
+}
+
+.submit-error {
+    display: inline-block;
+    padding: $padding-xxsmall 0 $padding-small 0;
+    width: 100%;
+}
