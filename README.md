@@ -7,4 +7,4 @@
 - css only effects
 - css geometric shapes
 
-https://gomezsantiago.com/
+[portfolio website link](https://santiagoa58.github.io/portfolio/)
